@@ -4,6 +4,7 @@
 import Footer from "@/components/Footer.vue";
 </script>
 <template>
+  <Toast class="z-50"/>
   <Navbar class="w-screen"/>
   <BreadcrumbDetail class="w-screen relative top-20 z-2"/>
   <YachtTitle class="w-screen relative top-20"/>
