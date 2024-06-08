@@ -79,9 +79,9 @@ const cruises = ref<Cruise[]>([]);
 const fetchCruiseFeatured = async () => {
   const url = `http://localhost:8080/api/cruises/featured`;
   const response = await fetch(url, {
-    headers: {
-      'Authorization': `Bearer ${access_token.value}`,
-    },
+    // headers: {
+    //   'Authorization': `Bearer ${access_token.value}`,
+    // },
   });
 
   if (response.status === 403) {
@@ -94,9 +94,9 @@ const fetchCruiseFeatured = async () => {
 
   for (const cruise of cruises.value) {
     const imageResponse = await fetch(`http://localhost:8080/api/cruise/images/${cruise.id}`, {
-      headers: {
-        'Authorization': `Bearer ${access_token.value}`,
-      },
+      // headers: {
+      //   'Authorization': `Bearer ${access_token.value}`,
+      // },
     });
 
     const imageBlob = await imageResponse.blob();
