@@ -67,7 +67,7 @@ interface CruiseCabinType {
 }
 
 onMounted(async () => {
-  const response = await fetch(`https://cruise-royal.up.railway.app/api/cabins?cruiseId=${cruiseId}`);
+  const response = await fetch(`http://localhost:8080/api/cabins?cruiseId=${cruiseId}`);
 
   if (!response.ok) {
     throw new Error(`Server responded with status code ${response.status}`);

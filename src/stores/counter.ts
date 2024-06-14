@@ -22,7 +22,7 @@ export const useAuthStore = defineStore({
             const formData = new FormData();
             formData.append('username', username);
             formData.append('password', password);
-            const url = 'https://cruise-royal.up.railway.app/api/login';
+            const url = 'http://localhost:8080/api/login';
             let response = await fetch(url, {
                 method: 'POST',
                 body: formData,
@@ -67,7 +67,7 @@ export const useAuthStore = defineStore({
         async fetchUserInfo() {
             const username = localStorage.getItem('user');
             const access_token = localStorage.getItem('access_token');
-            const url = `https://cruise-royal.up.railway.app/api/user?username=${username}`;
+            const url = `http://localhost:8080/api/user?username=${username}`;
 
             try {
                 const res = await fetch(url, {
@@ -99,7 +99,7 @@ export const useAuthStore = defineStore({
         },
         async fetchUserImage() {
             const userId = localStorage.getItem('userId');
-            const url = `https://cruise-royal.up.railway.app/api/images/?userId=${userId}`;
+            const url = `http://localhost:8080/api/images/?userId=${userId}`;
             const access_token = localStorage.getItem('access_token');
             try {
                 const res = await fetch(url, {
@@ -124,7 +124,7 @@ export const useAuthStore = defineStore({
             const formData = new FormData();
             formData.append('username', username);
             formData.append('password', password);
-            const url = 'https://cruise-royal.up.railway.app/api/register'; // replace with your register endpoint
+            const url = 'http://localhost:8080/api/register'; // replace with your register endpoint
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -140,7 +140,7 @@ export const useAuthStore = defineStore({
         },
 
         async refreshToken() {
-            const response = await fetch('https://cruise-royal.up.railway.app/api/token/refresh', {
+            const response = await fetch('http://localhost:8080/api/token/refresh', {
                 // replace with your refresh token endpoint
                 method: 'GET',
                 headers: {
