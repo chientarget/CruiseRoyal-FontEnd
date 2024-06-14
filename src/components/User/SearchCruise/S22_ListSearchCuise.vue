@@ -99,7 +99,7 @@ const fetchCruiseFeatured = async () => {
   cruises.value = data;
 
   for (const cruise of cruises.value) {
-    const imageResponse = await fetch(`hhttps://cruise-royal.up.railway.app/api/cruise/images/${cruise.id}`);
+    const imageResponse = await fetch(`https://cruise-royal.up.railway.app/api/cruise/images/${cruise.id}`);
     const imageBlob = await imageResponse.blob();
     cruise.imageUrl = URL.createObjectURL(imageBlob);
 
