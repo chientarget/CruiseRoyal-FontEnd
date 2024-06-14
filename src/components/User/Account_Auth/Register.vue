@@ -71,7 +71,7 @@ const register = async () => {
     return;
   }
 
-  const url = 'http://localhost:8080/api/user/save';
+  const url = 'https://cruise-royal.up.railway.app/api/user/save';
   const user = {
     username: username.value,
     name: name.value,

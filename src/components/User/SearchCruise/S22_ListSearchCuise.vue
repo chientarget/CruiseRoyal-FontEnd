@@ -87,7 +87,7 @@ interface Location {
 const cruises = ref<Cruise[]>([]);
 
 const fetchCruiseFeatured = async () => {
-  const url = `http://localhost:8080/api/cruises/featured`;
+  const url = `https://cruise-royal.up.railway.app/api/cruises/featured`;
   const response = await fetch(url);
 
   if (response.status === 403) {
@@ -99,7 +99,7 @@ const fetchCruiseFeatured = async () => {
   cruises.value = data;
 
   for (const cruise of cruises.value) {
-    const imageResponse = await fetch(`http://localhost:8080/api/cruise/images/${cruise.id}`);
+    const imageResponse = await fetch(`hhttps://cruise-royal.up.railway.app/api/cruise/images/${cruise.id}`);
     const imageBlob = await imageResponse.blob();
     cruise.imageUrl = URL.createObjectURL(imageBlob);
 
@@ -108,7 +108,7 @@ const fetchCruiseFeatured = async () => {
 };
 
 const fetchLocation = async (cruise: Cruise) => {
-  const url = `http://localhost:8080/api/locations/${cruise.locationId}`;
+  const url = `https://cruise-royal.up.railway.app/api/locations/${cruise.locationId}`;
   const response = await fetch(url);
 
   if (!response.ok) {

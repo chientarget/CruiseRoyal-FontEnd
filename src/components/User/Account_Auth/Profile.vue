@@ -246,7 +246,7 @@ const onAdvancedUpload = async (event: any) => {
 
     console.log('userId is not null or undefined'); // Kiểm tra nếu userId có giá trị
     try {
-      const res = await fetch('http://localhost:8080/api/images/upload', {
+      const res = await fetch('https://cruise-royal.up.railway.app/api/images/upload', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${access_token.value}`,
@@ -280,7 +280,7 @@ const logouts = async () => {
 
 const updateUser = async () => {
   const username = localStorage.getItem('user');
-  const url = `http://localhost:8080/api/user/update?username=${username}`;
+  const url = `https://cruise-royal.up.railway.app/api/user/update?username=${username}`;
 
   // Create an object with all fields
   const updatedFields = {
